@@ -11,6 +11,7 @@ I explain with all the details how I build the project and my way of working.
 
 - **Experience 0**: default template
 - **Experience 1**: Using the gridFs for saving file and reading file in the database
+- **Experience 2**: Using a cursor for passing through the data one by one
 
 ## Setting
 
