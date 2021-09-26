@@ -1,4 +1,4 @@
-import { Controller, Get, UploadedFile, UseInterceptors } from '@nestjs/common';
+import { Controller, Get, UploadedFile, UseInterceptors, Param } from '@nestjs/common';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { Experience1Service } from './experience1.service';
 import { Data } from './../../schemas/data.schema';
@@ -11,7 +11,11 @@ export class Experience1Controller {
   @Get()
   @UseInterceptors(FileInterceptor('file', {dest: 'uploads'}))
   writeFile(@UploadedFile() file: Express.Multer.File) {
-    console.log(file);
     return this.appService.writeFile(file);
+  }
+
+  @Get('info/:id')
+  infoFile(@Param() params) {
+    return this.appService.infoFile(params.id);
   }
 }
