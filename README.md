@@ -1,6 +1,13 @@
 # TEMPLATE-NESTJS
 
-## Installation
+## Plan of the presentation
+
+I explain with all the details how I build the project and my way of working.
+
+- [Experiences](#experiences)
+- [Setting of the project](#setting)
+
+## Setting
 
 1. Create the project
 
@@ -28,9 +35,13 @@ MongooseModule.forRoot('mongodb://<username>:<password>@<url>:<port>/<database>'
 $npm i --save @nestjs/config
 ```
 
+Add the dependency in the import of the app.module
+
 ```
 ConfigModule.forRoot({
-  envFilePath: ['.env.development.local', '.env.development'],
+  envFilePath: ['.env.local'],
   isGlobal: true
 }),
 ```
+
+Then create a *.env.local* file at the root of the project
