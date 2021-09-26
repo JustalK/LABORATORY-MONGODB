@@ -1,10 +1,10 @@
 import { Controller, Get } from '@nestjs/common';
-import { Experience0Service } from './experience0.service';
+import { ExperienceService } from './experience.service';
 import { Data } from './../../schemas/data.schema';
 
 @Controller('experience0')
-export class Experience0Controller {
-  constructor(private readonly appService: Experience0Service) {}
+export class ExperienceController {
+  constructor(private readonly appService: ExperienceService) {}
 
   @Get()
   getHello(): Promise<Data[]> {

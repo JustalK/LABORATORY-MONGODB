@@ -1,12 +1,12 @@
 import { Module } from '@nestjs/common';
-import { Experience0Controller } from './experience0.controller';
-import { Experience0Service } from './experience0.service';
+import { ExperienceController } from './experience.controller';
+import { ExperienceService } from './experience.service';
 import { Data, DataSchema } from './../../schemas/data.schema';
 import { MongooseModule } from '@nestjs/mongoose';
 
 @Module({
   imports: [MongooseModule.forFeature([{ name: Data.name, schema: DataSchema }])],
-  controllers: [Experience0Controller],
-  providers: [Experience0Service],
+  controllers: [ExperienceController],
+  providers: [ExperienceService],
 })
 export class Experience0Module {}

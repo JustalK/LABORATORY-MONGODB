@@ -4,7 +4,7 @@ import { InjectModel } from '@nestjs/mongoose';
 import { Data, DataDocument } from './../../schemas/data.schema';
 
 @Injectable()
-export class Experience0Service {
+export class ExperienceService {
   constructor(@InjectModel(Data.name) private dataModel: Model<DataDocument>) {}
 
   getHello(): Promise<Data[]> {
