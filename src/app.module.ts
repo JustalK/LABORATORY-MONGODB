@@ -6,7 +6,7 @@ import { ConfigModule } from '@nestjs/config';
 import { CommandModule } from 'nestjs-command';
 import { SeedsModule } from './seeds/data.module'
 
-import { Experience0Module } from './experiences/experience0/experience.module';
+import Experience0Module from './experiences/experience0/experience.module';
 import { Experience1Module } from './experiences/experience1/experience1.module';
 
 @Module({

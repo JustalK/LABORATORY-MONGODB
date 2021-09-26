@@ -9,4 +9,4 @@ import { MongooseModule } from '@nestjs/mongoose';
   controllers: [ExperienceController],
   providers: [ExperienceService],
 })
-export class Experience0Module {}
+export default class ExperienceModule {}
