@@ -7,13 +7,19 @@ import { CommandModule } from 'nestjs-command';
 import { SeedsModule } from './seeds/data.module'
 
 import { Experience0Module } from './experiences/experience0/experience0.module';
+import { Experience1Module } from './experiences/experience1/experience1.module';
 
 @Module({
   imports: [
-    Experience0Module,
     SeedsModule,
+    Experience0Module,
+    Experience1Module,
     CommandModule,
-    MongooseModule.forRoot('mongodb://root:smood2mongo@localhost:27017/admin'),
+    MongooseModule.forRoot('mongodb://localhost:27017',
+    {
+      useUnifiedTopology: true,
+      useNewUrlParser: true,
+    }),
     ConfigModule.forRoot({
       envFilePath: ['.env'],
       isGlobal: true
