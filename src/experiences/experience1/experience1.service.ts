@@ -3,7 +3,6 @@ import { Injectable } from '@nestjs/common';
 import { InjectModel, InjectConnection } from '@nestjs/mongoose';
 import { Data, DataDocument } from './../../schemas/data.schema';
 import { MongoGridFS } from 'mongo-gridfs';
-import { GridFSBucket, ObjectId } from 'mongodb'
 import fs from 'fs'
 
 @Injectable()
@@ -22,10 +21,27 @@ export class Experience1Service {
     });
   }
 
-  infoFile(id) {
-    return this.fileModel.find({});
+  /**
+  * Return the stream of the item
+  **/
+  readStream(id, res) {
+    return this.bucket.readFileStream(id).then((item) => {
+      item.once("error", () => {
+          return res.status(400).end();
+      }).pipe(res);
+    })
   }
 
+  /**
+  * Read the info save for the file
+  **/
+  infoFile(id) {
+    return this.bucket.findById(id);
+  }
+
+  /**
+  * Write a chunk in the database using the bucket
+  **/
   writeFile(file, metadata?) {
     if (this.isConnected) {
       return this.bucket.uploadFile(

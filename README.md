@@ -7,6 +7,11 @@ I explain with all the details how I build the project and my way of working.
 - [Experiences](#experiences)
 - [Setting of the project](#setting)
 
+## Experiences
+
+- **Experience 0**: default template
+- **Experience 1**: Using the gridFs for saving file and reading file in the database
+
 ## Setting
 
 1. Create the project
