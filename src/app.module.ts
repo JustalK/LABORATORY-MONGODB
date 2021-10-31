@@ -10,6 +10,7 @@ import Experience0Module from './experiences/experience0/experience.module';
 import { Experience1Module } from './experiences/experience1/experience1.module';
 import Experience2Module from './experiences/experience2/experience.module';
 import Experience3Module from './experiences/experience3/experience.module';
+import Experience4Module from './experiences/experience4/experience.module';
 
 @Module({
   imports: [
@@ -18,6 +19,7 @@ import Experience3Module from './experiences/experience3/experience.module';
     Experience1Module,
     Experience2Module,
     Experience3Module,
+    Experience4Module,
     CommandModule,
     MongooseModule.forRoot('mongodb://root:smood2Mongo@localhost:27018', {
       useUnifiedTopology: true,

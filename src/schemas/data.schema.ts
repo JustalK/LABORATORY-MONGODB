@@ -7,6 +7,8 @@ export type DataDocument = Data & Document;
 export class Data {
   @Prop()
   name: string;
+  @Prop()
+  date: Date;
 }
 
 export const DataSchema = SchemaFactory.createForClass(Data);
