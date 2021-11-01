@@ -10,4 +10,9 @@ export class ExperienceController {
   getHello(): Promise<Data[]> {
     return this.appService.convertDate();
   }
+
+  @Get('sub')
+  sub(): Promise<Data[]> {
+    return this.appService.substractDate();
+  }
 }
