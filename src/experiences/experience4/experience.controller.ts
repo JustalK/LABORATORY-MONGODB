@@ -15,4 +15,9 @@ export class ExperienceController {
   sub(): Promise<Data[]> {
     return this.appService.substractDate();
   }
+
+  @Get('range')
+  range(): Promise<Data[]> {
+    return this.appService.rangeDate();
+  }
 }

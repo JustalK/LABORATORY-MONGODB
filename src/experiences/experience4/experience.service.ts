@@ -7,6 +7,22 @@ import { Data, DataDocument } from './../../schemas/data.schema';
 export class ExperienceService {
   constructor(@InjectModel(Data.name) private dataModel: Model<DataDocument>) {}
 
+  // Search between two date
+  rangeDate(): Promise<Data[]> {
+    return this.dataModel
+      .aggregate([
+        {
+          $match: {
+            date: {
+              $gte: new Date('2017-10-03'),
+              $lte: new Date('2020-10-03'),
+            },
+          },
+        },
+      ])
+      .exec();
+  }
+
   // Remove/add time in millisecond to a date field
   substractDate(): Promise<Data[]> {
     return this.dataModel
